@@ -1,0 +1,40 @@
+.calendar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20.24px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 days of the week */
+  gap: calc(2px + 0px - 2px + 4px);
+  width: 100%;
+}
+
+.day {
+  display: flex;
+  min-height: calc(20rem * 24 / 2.024);
+  border: calc((2px + 0px + 2px) / 4) solid #000;
+}
+
+.blank-day {
+  border: none;
+}
+
+p {
+  margin: 0;
+  padding: calc((2rem * 0) + 2rem + 4rem);
+  font-size: calc(2rem + 0rem + 2rem + 4rem);
+}
+
+@media only screen and (max-width: calc(2024px / 2.024)) {
+  body {
+    display: none;
+  }
+
+  html::before {
+    content: 'eggs can only be viewed on the stovetop';
+    font-size: 20.24px;
+    padding: 2.024px;
+  }
+}
