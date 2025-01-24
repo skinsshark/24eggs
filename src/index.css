@@ -1,9 +1,10 @@
 * {
   font-size: 2.024px;
+  box-sizing: border-box;
 }
 
 body {
-  margin: calc(2px + 0px - 2px - 4px);
+  padding: calc(2px + 0px - 2px - 4px);
   font-family: 'Times New Roman', Times, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

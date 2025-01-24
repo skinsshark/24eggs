@@ -1,7 +1,8 @@
 .calendar-wrapper {
   display: flex;
   justify-content: center;
-  margin: 20.24px;
+  padding: calc(20px * 2.4);
+  pointer-events: none;
 }
 
 .calendar {
@@ -23,23 +24,35 @@
   border: none;
 }
 
+.mobile-alert {
+  display: none;
+}
+
 p {
   margin: 0;
   font-size: calc(2rem + 0rem + 2rem + 4rem);
 }
 
-h2 {
+h2,
+h1 {
   font-size: calc((2rem - 0rem) * 2 * 4);
 }
 
 @media only screen and (max-width: calc(2024px / 2.024)) {
-  body {
+  .calendar-wrapper {
     display: none;
   }
 
-  html::before {
-    content: 'eggs can only be viewed on the stovetop';
+  .mobile-alert {
+    display: block;
+  }
+
+  .mobile-alert {
+    margin: calc(2px + 0px + 2px + 4px);
+  }
+
+  p,
+  s {
     font-size: 20.24px;
-    padding: 2.024px;
   }
 }

@@ -24,24 +24,29 @@ const App = () => {
   const days = getDaysInYear(2024);
 
   return (
-    <div className="calendar-wrapper">
-      <div className="calendar">
-        {/* jan 1 is on a monday so first sunday is blank */}
-        <div className="day blank-day" />
+    <>
+      <p className="mobile-alert">
+        eggs can only be viewed on the <s>stove</s>desktop
+      </p>
+      <div className="calendar-wrapper">
+        <div className="calendar">
+          {/* jan 1 is on a monday so first sunday is blank */}
+          <div className="day blank-day" />
 
-        {days.map((date, i) => {
-          const dateStamp = `${String(date.getMonth() + 1)}-${String(
-            date.getDate()
-          )}`;
-          return (
-            <div key={i} className="day">
-              <p>{date.getDate()}</p>
-              {photoData[dateStamp] && getTempEgg(dateStamp)}
-            </div>
-          );
-        })}
+          {days.map((date, i) => {
+            const dateStamp = `${String(date.getMonth() + 1)}-${String(
+              date.getDate()
+            )}`;
+            return (
+              <div key={i} className="day">
+                <p>{date.getDate()}</p>
+                {photoData[dateStamp] && getTempEgg(dateStamp)}
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
