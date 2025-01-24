@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import photoData from './data.json';
 
 const getDaysInYear = (year) => {
   const startDate = new Date(year, 0, 1); // jan 1
@@ -14,6 +15,11 @@ const getDaysInYear = (year) => {
   return days;
 };
 
+const getTempEgg = (dateStamp) => {
+  const count = photoData[dateStamp]?.length || 0;
+  return Array.from({ length: count }, (_, i) => <h2 key={i}>🍳</h2>);
+};
+
 const App = () => {
   const days = getDaysInYear(2024);
 
@@ -24,9 +30,13 @@ const App = () => {
         <div className="day blank-day" />
 
         {days.map((date, i) => {
+          const dateStamp = `${String(date.getMonth() + 1)}-${String(
+            date.getDate()
+          )}`;
           return (
             <div key={i} className="day">
               <p>{date.getDate()}</p>
+              {photoData[dateStamp] && getTempEgg(dateStamp)}
             </div>
           );
         })}

@@ -13,8 +13,10 @@
 
 .day {
   display: flex;
+  flex-direction: column;
   min-height: calc(20rem * 24 / 2.024);
   border: calc((2px + 0px + 2px) / 4) solid #000;
+  padding: calc((2rem * 0) + 2rem + 4rem);
 }
 
 .blank-day {
@@ -23,8 +25,11 @@
 
 p {
   margin: 0;
-  padding: calc((2rem * 0) + 2rem + 4rem);
   font-size: calc(2rem + 0rem + 2rem + 4rem);
+}
+
+h2 {
+  font-size: calc((2rem - 0rem) * 2 * 4);
 }
 
 @media only screen and (max-width: calc(2024px / 2.024)) {
